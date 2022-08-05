@@ -1,0 +1,144 @@
+.scene {
+    width: 200px;
+    height: 200px;
+    perspective: 600px;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+.cube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    /* perspective: 600px; 는 .scene의 자식요소인 .cube에만 
+    적용 되기 때문에 transform-style: preserve-3d; 를 사용하면
+    .cube의 자식에도 적용이 된다. */
+    transform: translateZ(-100px);
+    animation: rotation 7s infinite;
+}
+
+.cube_face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 200px;
+}
+
+.cube_face_front {
+    background-color: rgba(223, 85, 165, 0.5);
+    transform: translateZ(100px);
+}
+
+.cube_face_back {
+    background-color: rgba(45, 201, 201, 0.5);
+    transform: translateZ(-100px);
+}
+
+.cube_face_right {
+    background-color: rgba(201, 235, 12, 0.5);
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.cube_face_left {
+    background-color: rgba(109, 17, 230, 0.5);
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cube_face_top {
+    background-color: rgba(26, 240, 18, 0.5);
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.cube_face_bottom {
+    background-color: rgba(243, 12, 147, 0.5);
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+.scene2 {
+    width: 300px;
+    height: 200px;
+    perspective: 600px;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+.cube2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateZ(-50px);
+    animation: rotation 7s infinite;
+}
+
+.cube_face2 {
+    position: absolute;
+    color: white;
+    text-align: center;
+}
+
+.cube_face_front2 {
+    background-color: rgba(223, 85, 165, 0.5);
+    width: 300px;
+    height: 200px;
+    line-height: 200px;
+    transform: translateZ(50px);
+}
+
+.cube_face_back2 {
+    background-color: rgba(45, 201, 201, 0.5);
+    width: 300px;
+    height: 200px;
+    line-height: 200px;
+    transform: translateZ(-50px);
+}
+
+.cube_face_right2 {
+    background-color: rgba(201, 235, 12, 0.5);
+    width: 100px;
+    height: 200px;
+    left: 100px;
+    line-height: 200px;
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+.cube_face_left2 {
+    background-color: rgba(109, 17, 230, 0.5);
+    width: 100px;
+    height: 200px;
+    left: 100px;
+    line-height: 200px;
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+.cube_face_top2 {
+    background-color: rgba(26, 240, 18, 0.5);
+    width: 300px;
+    height: 100px;
+    top: 50px;
+    line-height: 100px;
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.cube_face_bottom2 {
+    background-color: rgba(243, 12, 147, 0.5);
+    width: 300px;
+    height: 100px;
+    top: 50px;
+    line-height: 100px;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+
+@keyframes rotation {
+    0% {
+        transform: translateZ(-100px) rotate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translateZ(-100px) rotate3d(1, 0, 1, 360deg);
+    }
+}
