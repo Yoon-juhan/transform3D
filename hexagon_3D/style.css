@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+
+}
+
+.space {
+    width: 300px;
+    height: 300px;
+    perspective: 500px;
+    margin: 0 auto;
+}
+
+.object {
+    position: relative;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    top: 200px;
+    transform: translateZ(-259.8076211px);
+}
+
+.polygon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 300px;
+    font-size: 50px;
+}
+
+/* 259.8076211px = 정삼각형 높이 공식  (루트3 / 2 * 300)     */
+.front {
+    background-color: rgba(255, 44, 44, 0.5);
+    transform: translateZ(259.8076211px);
+}
+
+.back {
+    background-color: rgba(51, 255, 44, 0.5);
+    transform: translateZ(-259.8076211px);
+}
+
+.polygon_top {
+    fill: rgba(69, 1, 255, 0.5);
+    left: -150px;
+    transform: rotateX(90deg) translateZ(300px) translateY(40px);
+}
+
+svg {
+    position: absolute;
+    font-size: 50px;
+}
+
+.polygon_bottom {
+    fill: rgba(0, 255, 64, 0.5);
+    left: -150px;
+    transform: rotateX(90deg) translateZ(0px) translateY(40px);
+}
+
+
+.left1 {
+    background-color: rgba(118, 44, 255, 0.5);
+    transform: rotateY(-60deg) translateZ(259.8076211px);
+}
+
+.left2 {
+    background-color: rgba(44, 83, 255, 0.5);
+    transform: rotateY(-120deg) translateZ(259.8076211px);
+}
+
+.right1 {
+    background-color: rgba(255, 168, 37, 0.5);
+    transform: rotateY(60deg) translateZ(259.8076211px);
+}
+
+.right2 {
+    background-color: rgba(255, 223, 44, 0.5);
+    transform: rotateY(120deg) translateZ(259.8076211px);
+}
+
+@keyframes rotation {
+    0% {
+        transform: translateZ(-100px) rotate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translateZ(-100px) rotate3d(1, 0, 1, 360deg);
+    }
+}
