@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+
+}
+
+.space {
+    width: 300px;
+    height: 300px;
+    perspective: 500px;
+    margin: 0 auto;
+}
+
+.object {
+    position: relative;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    top: 200px;
+    transform: translateZ(-269.8076211px);
+    /* animation: rotation 10s infinite; */
+}
+
+.polygon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 300px;
+    font-size: 50px;
+}
+
+/* 259.8076211px = 정삼각형 높이 공식  (루트3 / 2 * 300)     */
+.front {
+    background-color: rgba(255, 44, 44, 0.5);
+    transform: translateZ(269.8076211px);
+}
+
+.back {
+    background-color: rgba(51, 255, 44, 0.5);
+    transform: translateZ(-269.8076211px);
+}
+
+.left1 {
+    background-color: rgba(118, 44, 255, 0.5);
+    transform: rotateY(-60deg) translateZ(269.8076211px);
+}
+
+.left2 {
+    background-color: rgba(44, 83, 255, 0.5);
+    transform: rotateY(-120deg) translateZ(269.8076211px);
+}
+
+.right1 {
+    background-color: rgba(255, 168, 37, 0.5);
+    transform: rotateY(60deg) translateZ(269.8076211px);
+}
+
+.right2 {
+    background-color: rgba(255, 223, 44, 0.5);
+    transform: rotateY(120deg) translateZ(269.8076211px);
+}
+
+@keyframes rotation {
+    0% {
+        transform: translateZ(-100px) rotate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translateZ(-100px) rotate3d(1, 0, 1, 360deg);
+    }
+}
